@@ -464,7 +464,9 @@ class BLACS(object):
             # Actually this is a waste of time because if you close when maximized, reoopen and then
             # de-maximize, the window moves to a random position (not the position it was at before maximizing)
             # so bleh!
-            self.ui.move(tab_data['BLACS settings']["window_xpos"]-tab_data['BLACS settings']['window_frame_width']/2,tab_data['BLACS settings']["window_ypos"]-tab_data['BLACS settings']['window_frame_height']+tab_data['BLACS settings']['window_frame_width']/2)
+            self.ui.move(int(tab_data['BLACS settings']["window_xpos"]-tab_data['BLACS settings']['window_frame_width']/2),
+                         int(tab_data['BLACS settings']["window_ypos"]-tab_data['BLACS settings']['window_frame_height']
+                         + tab_data['BLACS settings']['window_frame_width']/2))
             self.ui.resize(tab_data['BLACS settings']["window_width"],tab_data['BLACS settings']["window_height"])
 
             if 'window_maximized' in tab_data['BLACS settings'] and tab_data['BLACS settings']['window_maximized']:
